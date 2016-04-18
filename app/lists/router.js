@@ -1,8 +1,16 @@
-
 import Ember from 'ember';
+import config from './config/environment';
 
-export default Ember.Route.extend({
-  model() {
-    return this.store.findAll(`list`);
-  },
+const Router = Ember.Router.extend({
+  location: config.locationType
 });
+
+Router.map(function() {
+  this.route('lists', { path:'/' }, function() {
+    this.route('new');
+
+    this.route(`detail`, { path: `/:list_id` });
+  });
+});
+
+export default Router;

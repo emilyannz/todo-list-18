@@ -1,1 +1,12 @@
+<header>
+  <div class="nav-container">
+    <div class="header-container__items">
+      {{#link-to "lists"}}
+      <p>{{fa-icon "bars" class="header-item"}}</p>
+      {{/link-to}}
+      <h4 class="header-text header-item">Todos</h4>
+    </div>
+  </div>
+  </header>
 
+  {{outlet}}

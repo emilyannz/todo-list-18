@@ -1,14 +1,19 @@
-<div class="main-content__container">
-  <div class="main-content">
-    <div class="main-content__title">
-      <h2>Add New List</h2>
-    </div>
-    <form {{action saveList model on="submit"}} class="form-content">
-      <div class="input-container">
-        {{input class="input-item" value=model.title type=text placeholder="List Name"}}
+<nav class="nav-container">
+  <div class="nav__menu">
+    <ul class="todo__menu">
+      {{!--Each-loop to grab lists  --}}
+      {{#each model as |list|}}
+      <li class="todo-title">
+        {{#link-to "lists.details" list.id}}
+          <p class="list-title">{{list.title}}</p>
+        {{/link-to}}
+      </li>
+      {{/each}}
+    </ul>
+    {{!--Links to 'New' page  --}}
+      {{#link-to "lists.new" class="add-list"}}
+        <p>Add New List</p>
+      {{/link-to}}</div>
+</nav>
 
-        <button class="submit-button">Accept</button>
-      </div>
-    </form>
-  </div>
-</div>
+{{outlet}}

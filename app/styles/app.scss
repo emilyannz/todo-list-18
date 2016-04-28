@@ -1,23 +1,27 @@
-@import 'variables';
-@import 'yoga';
-@import 'topnav';
-@import 'listsnew';
-@import 'listsdetail';
+* {
+  box-sizing: border-box;
 
-// Uncomment this for working with yoga prototyping
-// http://rtablada.github.io/yoga-sass/#mixin-yoga-prototype
-// @include yoga-prototype();
+  :before,
+  :after {
+    box-sizing: border-box;
+  }
+}
+
 body {
   margin: 0;
-  font-family: Roboto;
+  color: $title-white;
+  font-family: sans-serif;
 }
 
 ul {
-  padding-left: 0;
+  padding: 0;
+}
+
+li {
   list-style: none;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: $title-white;
 }

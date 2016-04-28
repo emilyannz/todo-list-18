@@ -1,26 +1,37 @@
+<div class="main-content__container">
+  <div class="main-content">
+    <div class="main-content__title">
+      <h2>{{model.title}}</h2>
+    </div>
 
-<div class="container">
-  <h2 class="title">{{model.title}}</h2>
-  <form class="form" {{action saveReminder model newReminder on="submit"}}>
-    <ul>
-      {{#each model.reminders as |item|}}
-        <li class="form__item" {{action done item on="click"}}>
-          <span class="checkbox">
-            {{fa-icon "fa-square-o"}}
-            {{fa-icon "fa-check-square-o" class="checked"}}
-          </span>
-          <span class="text-done">
-            {{item.name}}
-          </span>
-        </li>
-      {{/each}}
-    </ul>
-    {{input class="form-input" value=newReminder.name placeholder="What needs to get done?"}}
-    <div class="form-submit">
-      <button class="form-submit__button">Add</button>
+    <div class="delete-container">
+      <button {{action deleteList model on="click"}} class="delete-button">x</button>
     </div>
-    <div class="form-delete">
-      <button class="form-delete__button" {{action deleteList model on="click"}}>ZZZ</button>
-    </div>
-  </form>
+    <form class="form-content" {{action saveReminders model newReminder on="submit"}}>
+      <ul class="reminders-list">
+        {{#each model.reminders as |reminder|}}
+
+          <li class="reminders-items">
+
+            <input type="checkbox" {{action markDone reminder on="click" preventDefault=false}}>
+
+            {{#if reminder.done}}
+              <p class="reminder-name done">{{reminder.name}}</p>
+
+            {{else}}
+
+              <p class="reminder-name">{{reminder.name}}</p>
+            {{/if}}
+
+          </li>
+
+        {{/each}}
+      </ul>
+
+      <div class="input-container__reminder">
+        {{input class="input-item" type=text value=newReminder.name placeholder="What do you want to do?"}}
+        <button class="submit-button">Accept</button>
+      </div>
+    </form>
+  </div>
 </div>

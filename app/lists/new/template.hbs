@@ -1,0 +1,14 @@
+<div class="main-content__container">
+  <div class="main-content">
+    <div class="main-content__title">
+      <h2>Add New List</h2>
+    </div>
+    <form {{action saveList model on="submit"}} class="form-content">
+      <div class="input-container">
+        {{input class="input-item" value=model.title type=text placeholder="List Name"}}
+
+        <button class="submit-button">Accept</button>
+      </div>
+    </form>
+  </div>
+</div>

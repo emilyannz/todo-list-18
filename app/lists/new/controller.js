@@ -1,15 +1,12 @@
+
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  saveList(attrs) {
-    console.log(attrs);
-    // Create a new list model
-    const list = this.store.createRecord(`list`, attrs);
+  saveList(attr) {
+    const list = this.store.createRecord(`list`, attr);
 
-    // Save list model
     list.save().then(() => {
-      console.log(list.id)
-      this.transitionToRoute(`lists.detail`, list.id);
+      this.transitionToRoute(`lists.details`, list.id);
     });
   },
 });

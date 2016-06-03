@@ -4,7 +4,7 @@
       {{!--Each-loop to grab lists  --}}
       {{#each model as |list|}}
       <li class="todo-title">
-        {{#link-to "lists.details" list.id}}
+        {{#link-to "lists.detail" list}}
           <p class="list-title">{{list.title}}</p>
         {{/link-to}}
       </li>

@@ -4,5 +4,6 @@ import { hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
   title: attr(),
-  reminders: hasMany(`reminder`),
+  done: attr(),
+  list: belongsTo(`list`),
 });

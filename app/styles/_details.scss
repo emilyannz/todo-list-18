@@ -1,0 +1,33 @@
+.reminder-name {
+  margin-top: 0;
+  padding-left: 0.5rem;
+}
+
+.reminders-items {
+  display: flex;
+}
+
+.input-container__reminder {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-button {
+  border: 0;
+  outline: none;
+  background: $delete-red;
+  color: $title-white;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.done {
+  text-decoration: line-through;
+}

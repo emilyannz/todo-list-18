@@ -1,0 +1,19 @@
+<nav class="nav-container">
+  <div class="nav__menu">
+    <ul class="todo__menu">
+      {{!--Each-loop to grab lists  --}}
+      {{#each model as |list|}}
+      <li class="todo-title">
+        {{#link-to "lists.detail" list}}
+          <p class="list-title">{{list.title}}</p>
+        {{/link-to}}
+      </li>
+      {{/each}}
+    </ul>
+    {{!--Links to 'New' page  --}}
+      {{#link-to "lists.new" class="add-list"}}
+        <p>Add New List</p>
+      {{/link-to}}</div>
+</nav>
+
+{{outlet}}
